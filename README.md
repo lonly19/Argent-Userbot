@@ -175,28 +175,37 @@ python start_argent.py
 ## 📁 Структура проекта
 
 ```
-argent/
+Argent-Userbot/
 ├── argent/                    # Основной пакет юзербота
 │   ├── __init__.py           # Экспорты основных классов
-│   ├── core.py               # Ядро юзербота с модульной системой
-│   ├── loader.py             # Система загрузки модулей
-│   ├── database.py           # База данных (JSON + SQLite)
-│   ├── utils.py              # Научные утилиты
-│   ├── inline_bot.py         # Автоматический inline бот
-│   └── modules/              # Директория модулей
-│       ├── system_core.py    # Системное управление
-│       ├── owner_manager.py  # Управление овнерами
-│       ├── core_utils.py     # Базовые утилиты
-│       ├── admin_tools.py    # Админ инструменты
-│       ├── heroku_features.py # Классические функции
-│       ├── auto_features.py  # Автоматические функции
-│       └── fun_lab.py        # Развлекательные команды
-├── argent_userbot/           # Веб-установщик
-│   ├── app.py               # Flask приложение
-│   ├── bot_runner.py        # Бот установки (aiogram)
-│   ├── telethon_manager.py  # Менеджер сессий
-│   ├── templates/           # HTML шаблоны
-│   └── static/             # CSS стили
+│   ├── core/                 # Основные компоненты
+│   │   ├── userbot.py        # Главный класс ArgentUserBot
+│   │   └── loader.py         # Система загрузки модулей
+│   ├── storage/              # Система хранения данных
+│   │   ├── database.py       # База данных (JSON + SQLite)
+│   │   ├── session_manager.py # Управление сессиями
+│   │   └── session_storage.py # Хранение сессий
+│   ├── bot/                  # Компоненты ботов
+│   │   └── inline_bot.py     # Автоматический inline бот
+│   ├── utils/                # Утилиты и конфигурация
+│   │   ├── utils.py          # Научные утилиты
+│   │   ├── config_manager.py # Менеджер конфигурации
+│   │   └── config_defaults.py # Настройки по умолчанию
+│   ├── modules/              # Директория модулей
+│   │   ├── system_core.py    # Системное управление
+│   │   ├── owner_manager.py  # Управление овнерами
+│   │   ├── core_utils.py     # Базовые утилиты
+│   │   ├── admin_tools.py    # Админ инструменты
+│   │   ├── Argent_features.py # Классические функции
+│   │   ├── auto_features.py  # Автоматические функции
+│   │   └── fun_lab.py        # Развлекательные команды
+│   ├── installer/            # Веб-установщик
+│   │   ├── app.py           # Flask приложение
+│   │   ├── bot_runner.py    # Бот установки (aiogram)
+│   │   ├── telethon_manager.py # Менеджер сессий
+│   │   ├── templates/       # HTML шаблоны
+│   │   └── static/         # CSS стили
+│   └── config/              # Конфигурационные файлы
 ├── run.py                   # Запуск веб-установщика
 ├── start_argent.py          # Запуск основного юзербота
 └── requirements.txt         # Зависимости
