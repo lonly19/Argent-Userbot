@@ -17,7 +17,7 @@
 ### 1. Клонирование и зависимости
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/lonly19/Argent-Userbot.git
 cd argent
 pip install -r requirements.txt
 ```
