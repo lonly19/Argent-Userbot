@@ -1,0 +1,5 @@
+# Argent UserBot 
+ARGENT_DATA_DIR=.argent_data
+HOST=0.0.0.0
+PORT=5000
+DEBUG=false
