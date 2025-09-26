@@ -1,0 +1,68 @@
+{
+  "userbot": {
+    "name": "Argent UserBot",
+    "version": "2.0.0",
+    "author": "github.com/lonly19/Argent-Userbot",
+    "emoji": "⚗️",
+    "command_prefix": ".",
+    "language": "ru",
+    "timezone": "Europe"
+  },
+  "logging": {
+    "level": "INFO",
+    "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    "file_logging": true,
+    "console_logging": true,
+    "max_log_size": 10485760,
+    "backup_count": 5
+  },
+  "modules": {
+    "auto_load": true,
+    "load_on_startup": [
+      "core_commands",
+      "system_info",
+      "module_manager",
+      "utils"
+    ],
+    "disabled_modules": [],
+    "module_timeout": 30
+  },
+  "security": {
+    "allow_inline": true,
+    "check_permissions": true,
+    "admin_only_commands": [
+      "eval",
+      "exec",
+      "terminal",
+      "restart"
+    ],
+    "trusted_users": [],
+    "blacklisted_users": []
+  },
+  "performance": {
+    "flood_sleep_threshold": 60,
+    "request_retries": 3,
+    "connection_retries": 5,
+    "timeout": 30,
+    "max_concurrent_requests": 10
+  },
+  "database": {
+    "backup_interval": 3600,
+    "auto_backup": true,
+    "max_backups": 10,
+    "compress_backups": true
+  },
+  "interface": {
+    "show_startup_banner": true,
+    "show_command_help": true,
+    "use_emojis": true,
+    "compact_mode": false,
+    "hide_commands": false
+  },
+  "notifications": {
+    "startup_message": true,
+    "error_notifications": true,
+    "module_load_notifications": false,
+    "command_execution_notifications": false
+  }
+}
