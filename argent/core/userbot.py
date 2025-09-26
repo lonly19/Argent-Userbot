@@ -1,4 +1,4 @@
-# Argent Userbot
+# Argent 
 import asyncio
 import contextlib
 import logging
