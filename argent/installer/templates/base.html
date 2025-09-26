@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!doctype html>
 <html lang="ru">
 <head>
@@ -84,3 +85,91 @@
   {% block scripts %}{% endblock %}
 </body>
 </html>
+=======
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="referrer" content="no-referrer" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="DENY" />
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+  <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains" />
+  
+  <title>{% block title %}Argent UserBot - Безопасная установка{% endblock %}</title>
+  <meta name="description" content="{% block description %}Современный Telegram UserBot с защищенной веб-установкой{% endblock %}" />
+  
+  <link rel="preload" href="{{ url_for('static', filename='styles.css') }}" as="style" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+  
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+  
+  {% block head %}{% endblock %}
+ </head>
+ <body class="argent">
+  <div id="loading-indicator" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary)); z-index: 9999;"></div>
+  
+  <header class="topbar">
+    <div class="brand">{% block brand %}⚡ Argent UserBot{% endblock %}</div>
+    <div class="security-badge" title="Защищенное соединение">🔒</div>
+  </header>
+  <main class="container">
+    <noscript>
+      <div class="alert warning">
+        ⚠️ JavaScript отключен. Для полной функциональности включите JavaScript в браузере.
+      </div>
+    </noscript>
+    
+    {% block content %}{% endblock %}
+  </main>
+  
+  <footer class="footer">
+    <div>© 2024 Argent UserBot</div>
+    <div class="security-info">🔐 Защищено SSL/TLS шифрованием</div>
+  </footer>
+  
+  <script>
+
+    (function() {
+      'use strict';
+
+      if (!window.location.hostname.includes('localhost')) {
+        document.addEventListener('contextmenu', e => e.preventDefault());
+        document.addEventListener('selectstart', e => e.preventDefault());
+        document.addEventListener('dragstart', e => e.preventDefault());
+      }
+
+      if (window.top !== window.self) {
+        window.top.location = window.self.location;
+      }
+
+      if (typeof console !== 'undefined') {
+        console.clear();
+        console.log('%c🔐 Argent UserBot Security Active', 'color: #10b981; font-size: 14px; font-weight: bold;');
+      }
+
+      const loadingIndicator = document.getElementById('loading-indicator');
+
+      document.addEventListener('submit', function() {
+        if (loadingIndicator) {
+          loadingIndicator.style.display = 'block';
+        }
+      });
+
+      window.addEventListener('load', function() {
+        if (loadingIndicator) {
+          setTimeout(() => {
+            loadingIndicator.style.display = 'none';
+          }, 500);
+        }
+      });
+      
+    })();
+  </script>
+  
+  {% block scripts %}{% endblock %}
+</body>
+</html>
+>>>>>>> 6baa4adf9f73b732ceaaaecf1d22014eadf81005

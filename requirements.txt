@@ -17,4 +17,8 @@ bcrypt>=4.0.0
 telegraph
 googletrans==4.0.0-rc1
 qrcode[pil]
+<<<<<<< HEAD
 speedtest-cli
+=======
+speedtest-cli
+>>>>>>> 6baa4adf9f73b732ceaaaecf1d22014eadf81005
